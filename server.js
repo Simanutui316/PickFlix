@@ -20,7 +20,8 @@ require('./config/database');
 require('./config/passport');
 
 let indexRouter = require('./routes/index')
-let userRouter = require('./routes/index')
+let usersRouter = require('./routes/users')
+const flixRouter = require('./routes/flix')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -56,7 +57,8 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRouter);
-app.use('/users', userRouter);
+app.use('/users', usersRouter);
+app.use('/flix', flixRouter);
 
 // invalid request, send 404 page
 app.use(function (req, res) {
