@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+
 // session middleware
 var session = require('express-session');
 var passport = require('passport');
@@ -18,7 +19,8 @@ require('./config/database');
 // configure Passport
 require('./config/passport');
 
-
+let indexRouter = require('./routes/index')
+let userRouter = require('./routes/index')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,6 +32,10 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+
+
+
 // mount the session middleware
 app.use(session({
   secret: 'SEI Rocks!',
@@ -49,11 +55,11 @@ app.use(function (req, res, next) {
 });
 
 // mount all routes with appropriate base paths
-app.use('/', indexRoutes);
-
+app.use('/', indexRouter);
+app.use('/users', userRouter);
 
 // invalid request, send 404 page
-app.use(function(req, res) {
+app.use(function (req, res) {
   res.status(404).send('Cant find that!');
 });
 
