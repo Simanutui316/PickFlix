@@ -18,3 +18,8 @@ li {
   background: black;
 }
  */
+
+
+ #mpaa-rating {
+   display: block !important;
+ }

@@ -3,9 +3,9 @@ const Flix = require('../models/flix');
 module.exports = {
     index,
     newFlix,
+    delete: deleteFlix,
     create
     // flixDetail,
-    // delete: deleteFlix,
     // compileFlix
 }
 
@@ -21,13 +21,13 @@ function newFlix(req, res) {
     res.render('flix/new')
 }
 
-// function deleteFlix(req, res) {
-//     Showcase.findByIdAndDelete(req.params.id, function () {
-//         res.redirect('/flix');
+function deleteFlix(req, res) {
+    Flix.findByIdAndDelete(req.params.id, function () {
+        res.redirect('/flix');
 
-//     });
+    });
 
-// }
+}
 
 
 function create(req, res) {
@@ -35,7 +35,7 @@ function create(req, res) {
     const flix = new Flix(req.body);
     flix.save(function (err) {
         if (err) {
-            return res.render("users/new");
+            return res.render("flix/new");
         }
         else {
             console.log('this is a place')
@@ -43,6 +43,7 @@ function create(req, res) {
         }
 
     })
+    console.log(flix)
 }
 
 // function flixDetail(req, res) {

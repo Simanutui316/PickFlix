@@ -3,43 +3,38 @@
     <% if(flix.length> 0) { %>
 
         <section id="show-page">
-            <div>Title: </div>
-            <div>
-                <%= flix.title %>
-            </div>
-            <div>Release Year: </div>
-            <div>
-                <%= flix.releaseYear %>
-            </div>
-            <div>Rating: </div>
-            <div>
-                <%= flix.mpaaRating %>
-            </div>
-            <div>Now Showing: </div>
-            <div>
-                <%= flix.didEnjoy ? 'Yes' : 'Nope' %>
-            </div>
-            <!-- start cast list -->
-            <div>Cast:</div>
-            <ul>
-                <%- flix.cast.map(p=>
-                    `<li>${p.name} <small>${p.born.toLocaleDateString()}</small></li>`
-                    ).join('') %>
-            </ul>
-            <!-- end cast list -->
+            <<table id="list">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Release<br>Year</th>
+                        <th>DELETE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% flix.forEach(function(m) { %>
+                        <tr>
+                            <td>
+                                <%= m.title %>
+                            </td>
+                            <td>
+                                <%= m.releaseYear %>
+                            </td>
+                            <td>
+                                <form action="/flix/<%= m._id %>?_method=DELETE" class="delete-form" method="POST">
+                                    <button type="submit">X</button>
+                                </form>
+                            </td>
+                            <!-- <td><a href="/flix/<%= m._id %>">DELETE</a></td> -->
+                        </tr>
+                        <% }); %>
+                </tbody>
+                </table>
         </section>
-        <!-- add to cast form below this comment -->
-        <form id="add-per-to-cast" action='/flix<%=flix._id%>/performers' method="POST">
-            <select name="performerId">
-                <%- performers.map(p=>
-                    `<option value="${p._id}">${p.name}</option>`
-                    ).join('') %>
-            </select>
-            <button type="submit">Add to Cast</button>
-        </form>
+
 
         <% } else { %>
-            <p> There are no Flix yet </p>
+            <p> Add Some Flix To Be Seen Here </p>
             <% } %>
 
 

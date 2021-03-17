@@ -1,0 +1,25 @@
+<%- include('../../partials/header') %>
+
+    <section id="show-page">
+        <div>Title: </div>
+        <div>
+            <%= flix.title %>
+        </div>
+        <div>Release Year: </div>
+        <div>
+            <%= flix.releaseYear %>
+        </div>
+        <div>Rating: </div>
+
+        <div>
+            <%= flix.didEnjoy ? 'Yes' : 'Nope' %>
+        </div>
+
+    </section>
+
+
+
+
+
+
+    <%- include('../../partials/footer') %>
