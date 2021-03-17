@@ -62,7 +62,7 @@ app.use('/flix', flixRouter);
 
 // invalid request, send 404 page
 app.use(function (req, res) {
-  res.status(404).send('Cant find that!');
+  res.status(404).send('Check Your Routes!');
 });
 
 module.exports = app;

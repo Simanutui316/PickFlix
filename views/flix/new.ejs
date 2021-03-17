@@ -1,14 +1,16 @@
 <%- include('../../partials/header') %>
+    <% %>
+        <div class="container">
+            <form id="new-form" action="/flix/new" method="POST">
+                <label>Title:</label>
+                <input type="text" name="title">
+                <label>Release Year:</label>
+                <input type="text" name="releaseYear">
 
-    <form id="new-form" action="/flix/new" method="POST">
-        <label>Title:</label>
-        <input type="text" name="title">
-        <label>Release Year:</label>
-        <input type="text" name="releaseYear">
-
-        <input type="submit" value="Add Flix">
-    </form>
+                <input type="submit" value="Add Flix">
+            </form>
+        </div>
 
 
 
-    <%- include('../../partials/footer') %>
+        <%- include('../../partials/footer') %>

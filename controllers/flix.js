@@ -10,13 +10,14 @@ module.exports = {
 }
 
 function index(req, res) {
-    Flix.find({}, function (err, flix) {
-        res.render('flix/index', { title: 'My Flix', flix })
+    Flix.find({ 'user': req.user._id }, function (err, flix) {
+        res.render('flix/index', { flix: flix })
 
     });
 };
 
 function newFlix(req, res) {
+
 
     res.render('flix/new')
 }
@@ -32,6 +33,8 @@ function deleteFlix(req, res) {
 
 function create(req, res) {
 
+
+    req.body.user = req.user._id;
     const flix = new Flix(req.body);
     flix.save(function (err) {
         if (err) {
