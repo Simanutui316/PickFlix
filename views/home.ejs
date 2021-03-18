@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-    <div class="container-fluid center">
+    <div id="home-page" class="container-fluid center">
         <h1>
             Hello World!
         </h1>
@@ -8,6 +8,11 @@
         </p>
 
     </div>
+    <% if (user) {%>
+        <a href="/flix/rando" class="waves-effect red btn pulse">Rando Pick</a>
+        <% } else { %>
+            <p></p>
+            <% } %>
 
 
 
@@ -18,4 +23,7 @@
 
 
 
-    <%- include('../partials/footer') %>
+
+
+
+                <%- include('../partials/footer') %>

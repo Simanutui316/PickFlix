@@ -1,9 +1,12 @@
-/* Body {
-  background: url(https://i.imgur.com/ox3u0Nn.jpg);
-  filter: blur(80px);
+ Body {
+  /* background-image: url(https://i.imgur.com/qsjU7aV.jpg); */
+  position: relative;
 
+} 
 
-}  */
+#pickflix {
+  
+}
 
 body, html {
   height: 100%;
@@ -13,4 +16,8 @@ body, html {
   border-radius: 8px;
 }
 
- 
+#home-page {
+  background: whitesmoke;
+
+
+}

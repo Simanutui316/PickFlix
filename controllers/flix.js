@@ -9,12 +9,13 @@ module.exports = {
     randomFlix
     // flixDetail,
     // compileFlix
+
 }
 
 function randomFlix(req, res) {
     Flix.find({ 'user': req.user._id }, function (err, flix) {
         let rando = flix[Math.floor(Math.random() * flix.length)];
-        console.log(rando)
+        console.log("This is rando" + rando)
         res.render('flix/show', { flix: rando })
     });
 }
@@ -22,21 +23,21 @@ function randomFlix(req, res) {
 function show(req, res) {
     Flix.findById(req.params.id, function (err, flix) {
         // console.log(req.params.id);
-        // console.log('flix')
+        // console.log(flix)
         res.render('flix/show', { flix: flix })
     });
+
 };
 
 function index(req, res) {
     Flix.find({ 'user': req.user._id }, function (err, flix) {
+        // console.log(flix)
         res.render('flix/index', { flix: flix })
 
     });
 };
 
 function newFlix(req, res) {
-
-
     res.render('flix/new')
 }
 
@@ -50,11 +51,11 @@ function deleteFlix(req, res) {
 
 
 function create(req, res) {
-
-
+    console.log("in create")
     req.body.user = req.user._id;
     const flix = new Flix(req.body);
     flix.save(function (err) {
+        console.log("This is err: " + err)
         if (err) {
             return res.render("flix/new");
         }
@@ -67,11 +68,5 @@ function create(req, res) {
     console.log(flix)
 }
 
-// function flixDetail(req, res) {
-//     Flix.findById(req.params.id, function (err, flix) {
-//         console.log(req.params.id);
-//         console.log(flix);
-//         res.render('flix/detail', { flix: flix })
-//     });
-// };
+
 
