@@ -19,9 +19,11 @@ require('./config/database');
 // configure Passport
 require('./config/passport');
 
-let indexRouter = require('./routes/index')
-let usersRouter = require('./routes/users')
+const indexRouter = require('./routes/index')
+const usersRouter = require('./routes/users')
 const flixRouter = require('./routes/flix')
+const reviewsRouter = require('./routes/reviews');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -57,6 +59,7 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRouter);
+app.use('/', reviewsRouter);
 app.use('/users', usersRouter);
 app.use('/flix', flixRouter);
 

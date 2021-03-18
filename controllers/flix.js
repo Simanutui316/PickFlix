@@ -4,10 +4,19 @@ module.exports = {
     index,
     newFlix,
     delete: deleteFlix,
-    create
+    create,
+    show
     // flixDetail,
     // compileFlix
 }
+
+function show(req, res) {
+    Flix.findById(req.params.id, function (err, flix) {
+        // console.log(req.params.id);
+        // console.log('flix')
+        res.render('flix/show', { flix: flix })
+    });
+};
 
 function index(req, res) {
     Flix.find({ 'user': req.user._id }, function (err, flix) {

@@ -8,24 +8,35 @@
                     <tr>
                         <th>Title</th>
                         <th>Release<br>Year</th>
+                        <th>mpaaRating</th>
                         <th>DELETE</th>
+                        <th>Flix Details</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <% flix.forEach(function(m) { %>
+                    <% flix.forEach(function(f) { %>
                         <tr>
                             <td>
-                                <%= m.title %>
+                                <%= f.title %>
                             </td>
                             <td>
-                                <%= m.releaseYear %>
+                                <%= f.releaseYear %>
                             </td>
                             <td>
-                                <form action="/flix/<%= m._id %>?_method=DELETE" class="delete-form" method="POST">
-                                    <button type="submit">X</button>
+                                <%= f.mpaaRating %>
+                            </td>
+                            <td>
+                                <form action="/flix/<%= f._id %>?_method=DELETE" class="delete-form" method="POST">
+                                    <button class="red btn" type="submit">X</button>
                                 </form>
                             </td>
-                            <!-- <td><a href="/flix/<%= m._id %>">DELETE</a></td> -->
+                            <td>
+                                <a class="red-text" href="/flix/<%= f._id %>">DETAILS</a>
+                            </td>
+
+
+
+
                         </tr>
                         <% }); %>
                 </tbody>

@@ -31,7 +31,7 @@ const flixSchema = new Schema({
         }
     },
     mpaaRating: String,
-    didEnjoy: { type: Boolean, default: false },
+    didEnjoy: { type: Boolean, default: true },
     reviews: [reviewSchema],
     cast: [{ type: Schema.Types.ObjectId, ref: 'Flix' }]
 }, {

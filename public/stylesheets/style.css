@@ -1,8 +1,16 @@
-Body {
-  background:silver;
-} 
+/* Body {
+  background: url(https://i.imgur.com/ox3u0Nn.jpg);
+  filter: blur(80px);
 
 
+}  */
 
+body, html {
+  height: 100%;
+}
+
+.material-icons-outlined{
+  border-radius: 8px;
+}
 
  

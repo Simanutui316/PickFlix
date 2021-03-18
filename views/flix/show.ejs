@@ -1,25 +1,79 @@
 <%- include('../../partials/header') %>
 
-    <section id="show-page">
-        <div>Title: </div>
-        <div>
-            <%= flix.title %>
-        </div>
-        <div>Release Year: </div>
-        <div>
-            <%= flix.releaseYear %>
-        </div>
-        <div>Rating: </div>
+    <div class="container center background-silver">
+        <section>
+            <div>Title: </div>
+            <div>
+                <%= flix.title %>
+            </div>
+            <div>Release Year: </div>
+            <div>
+                <%= flix.releaseYear %>
+            </div>
+            <div>Enjoyed: </div>
 
-        <div>
-            <%= flix.didEnjoy ? 'Yes' : 'Nope' %>
-        </div>
+            <div>
+                <%= flix.didEnjoy ? 'Yes' : 'Nope' %>
+            </div>
 
-    </section>
+        </section>
+    </div>
+    <!-- Review Area -->
+    <h2>Reviews</h2>
+    <form id="add-review-form" method="POST" action="/flix/<%= flix._id %>/reviews">
+        <label>Review:</label>
+        <textarea name="content"></textarea>
+        <label>Rating:</label>
+        <select class="dropdown-trigger red btn" name="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <input type="submit" value="Add Review">
+    </form>
+
+    <% if (flix.reviews.length) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Review</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% let total=0 %>
+                    <% flix.reviews.forEach(function(r) { %>
+                        <% total +=r.rating %>
+                            <tr>
+                                <td>
+                                    <%= r.createdAt.toLocaleDateString() %>
+                                </td>
+                                <td>
+                                    <%= r.content %>
+                                </td>
+                                <td>
+                                    <%= r.rating %>
+                                </td>
+                            </tr>
+                            <% }); %>
+                                <tr>
+                                    <td colspan="2"></td>
+                                    <td><strong>
+                                            <%= (total / flix.reviews.length).toFixed(1) %>
+                                        </strong></td>
+                                </tr>
+            </tbody>
+        </table>
+        <% } else { %>
+            <h5>No Reviews Yet</h5>
+            <% } %>
 
 
 
 
 
 
-    <%- include('../../partials/footer') %>
+                <%- include('../../partials/footer') %>
