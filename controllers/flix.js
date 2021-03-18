@@ -5,9 +5,18 @@ module.exports = {
     newFlix,
     delete: deleteFlix,
     create,
-    show
+    show,
+    randomFlix
     // flixDetail,
     // compileFlix
+}
+
+function randomFlix(req, res) {
+    Flix.find({ 'user': req.user._id }, function (err, flix) {
+        let rando = flix[Math.floor(Math.random() * flix.length)];
+        console.log(rando)
+        res.render('flix/show', { flix: rando })
+    });
 }
 
 function show(req, res) {
@@ -66,6 +75,3 @@ function create(req, res) {
 //     });
 // };
 
-// function compileFlix(req, res) {
-//     Flix.red
-// }
