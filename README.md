@@ -1,7 +1,7 @@
-# passport-boilerplate
+#PICKFLIX
 
+PickFlix is a user based web app that lets users add, track, and organize data about the movies you want to watch, and 
 
-This is your passport boilerplate.
 
 ## Setup 
 
