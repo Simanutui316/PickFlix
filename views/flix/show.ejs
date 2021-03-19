@@ -1,7 +1,7 @@
 <%- include('../../partials/header') %>
 
 
-    <div class="container center background-silver">
+    <div class="details" class="container center background-silver">
         <section>
             <div>Title: </div>
             <div>
@@ -13,9 +13,9 @@
             </div>
             <div>Enjoyed: </div>
 
-            <div>
+            <!-- <div>
                 <%= flix.didEnjoy ? 'Yes' : 'Nope' %>
-            </div>
+            </div> -->
 
         </section>
     </div>
@@ -33,7 +33,7 @@
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
-        <input type="submit" value="Add Review">
+        <input class="black btn " type="submit" value="Add Review">
     </form>
 
     <% if (flix.reviews.length) { %>

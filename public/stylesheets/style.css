@@ -15,7 +15,10 @@ body, html {
   
 }
 
-
+.details {
+  font-size: 2rem;
+  
+}
 
 #glitch {
   color: white;
@@ -28,7 +31,7 @@ body, html {
   -0.25em -.05 0 rgba(0, 255, 0, .75),
   0.25em .05 0 rgba(0, 0, 255, .75);
   
-  animation: glitch 500ms Infinite;;
+  animation: glitch 750 Infinite;;
  }
   
   @keyframes glitch {
