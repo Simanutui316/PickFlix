@@ -1,5 +1,7 @@
 
-
+body {
+  background-image: url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.huffpost.com%2Fgen%2F1164304%2Fimages%2Fo-MOVIE-THEATER-facebook.jpg&f=1&nofb=1);
+}
 
 body, html {
   height: 100%;
@@ -27,9 +29,9 @@ body, html {
   text-transform: uppercase;
 
   text-shadow:
-  0.05em 0 0 rgba(255, 0, 0, .75),
-  -0.25em -.05 0 rgba(0, 255, 0, .75),
-  0.25em .05 0 rgba(0, 0, 255, .75);
+  0.5em 0 0 rgba(255, 0, 0, .75),
+  -0.25em -.5 0 rgba(0, 255, 0, .75),
+  0.25em .5 0 rgba(0, 0, 255, .75);
   
   animation: glitch 750 Infinite;;
  }
