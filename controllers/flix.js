@@ -7,10 +7,9 @@ module.exports = {
     create,
     show,
     randomFlix
-    // flixDetail,
-    // compileFlix
 
 }
+
 
 function randomFlix(req, res) {
     Flix.find({ 'user': req.user._id }, function (err, flix) {
@@ -26,8 +25,8 @@ function show(req, res) {
         // console.log(flix)
         res.render('flix/show', { title: "Flix Detail", flix })
     });
-
 };
+
 
 function index(req, res) {
     Flix.find({ 'user': req.user._id }, function (err, flix) {
