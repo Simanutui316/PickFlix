@@ -1,29 +1,32 @@
 <%- include('../partials/header') %>
 
-    <div id="home-page" class="container-fluid center">
-        <h1 id="glitch">
-            Welcome to PickFlix
-        </h1>
-        <!-- <p class="white-text pulse">Login To Add Flix</p> -->
+    <body class="home">
 
 
-    </div>
-    <% if (user) {%>
-        <a href="/rando" class="waves-effect red btn pulse">Rando</a>
-        <% } else { %>
-            <p></p>
-            <% } %>
+        <div id="home-page" class="container-fluid center">
+            <h1 id="glitch">
+                Welcome to PickFlix
+            </h1>
+            <!-- <p class="white-text pulse">Login To Add Flix</p> -->
 
 
-
-
-
-
+        </div>
+        <% if (user) {%>
+            <a href="/rando" class="waves-effect red btn pulse">Rando</a>
+            <% } else { %>
+                <p></p>
+                <% } %>
 
 
 
+    </body>
 
 
 
 
-                <%- include('../partials/footer') %>
+
+
+
+
+
+    <%- include('../partials/footer') %>
