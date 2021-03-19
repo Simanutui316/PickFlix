@@ -24,7 +24,7 @@ function show(req, res) {
     Flix.findById(req.params.id, function (err, flix) {
         // console.log(req.params.id);
         // console.log(flix)
-        res.render('flix/show', { flix: flix })
+        res.render('flix/show', { title: "Flix Detail", flix })
     });
 
 };

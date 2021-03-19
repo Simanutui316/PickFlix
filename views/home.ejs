@@ -1,15 +1,14 @@
 <%- include('../partials/header') %>
 
     <div id="home-page" class="container-fluid center">
-        <h1>
-            Hello World!
+        <h1 id="glitch">
+            Welcome to PickFlix
         </h1>
-        <p>Welcome to PickFlix
-        </p>
+
 
     </div>
     <% if (user) {%>
-        <a href="/flix/rando" class="waves-effect red btn pulse">Rando Pick</a>
+        <a href="/rando" class="waves-effect red btn pulse">Rando</a>
         <% } else { %>
             <p></p>
             <% } %>
