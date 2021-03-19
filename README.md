@@ -2,7 +2,7 @@
 
 PickFlix is a user based web app that lets users add, track, and organize data about the movies you want to watch, and compiles them for you to pick one at random on a movie night, when you just cant decide.
 
-![In Browser Look](https://imgur.com/a/inG9JZs)
+![In Browser Look](https://i.imgur.com/UxNHvTI.png)
 
 
 ## Technology Used 
