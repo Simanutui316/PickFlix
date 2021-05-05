@@ -50,11 +50,11 @@ function deleteFlix(req, res) {
 
 
 function create(req, res) {
-    console.log("in create")
+    // console.log("in create")
     req.body.user = req.user._id;
     const flix = new Flix(req.body);
     flix.save(function (err) {
-        console.log("This is err: " + err)
+        // console.log("This is err: " + err)
         if (err) {
             return res.render("flix/new");
         }

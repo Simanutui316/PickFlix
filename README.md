@@ -15,4 +15,5 @@ PickFlix is a user based web app that lets users add, track, and organize data a
 
 #### Getting Started 
 [Try It Out](https://pickflix316.herokuapp.com/)
+ (not deployed yet)
 
